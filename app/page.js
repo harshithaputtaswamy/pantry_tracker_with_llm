@@ -5,8 +5,8 @@ import { collection, query, onSnapshot, deleteDoc, doc } from 'firebase/firestor
 import { List, ListItem, ListItemText, IconButton, TextField } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import PantryForm from '../app/components/PantryForm';
-import CameraCapture from '../app/components/cameraCapture';
+import PantryForm from './components/PantryForm';
+import CameraCapture from './components/CameraCapture';
 
 export default function Home() {
     const [refreshList, setRefreshList] = useState(false);
