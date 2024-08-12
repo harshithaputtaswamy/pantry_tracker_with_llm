@@ -40,11 +40,11 @@ const CameraCapture = ({ onCapture }) => {
     //   console.log(result.response);
 
 
-    // const imageName = `pantry-items/${Date.now()}.jpg`;
-    // const storageRef = ref(storage, imageName);
-    // await uploadString(storageRef, capturedImage, 'data_url');
-    // const imageUrl = await getDownloadURL(storageRef);
-    // console.log(imageUrl);
+    const imageName = `pantry-items/${Date.now()}.jpg`;
+    const storageRef = ref(storage, imageName);
+    await uploadString(storageRef, capturedImage, 'data_url');
+    const imageUrl = await getDownloadURL(storageRef);
+    console.log(imageUrl);
 
 
     // const fileManager = new GoogleAIFileManager(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
@@ -96,6 +96,7 @@ const CameraCapture = ({ onCapture }) => {
         await addDoc(collection(db, 'pantry'), {
             name: itemName,
             quantity: itemQuantity,
+            imageURL: imageUrl
         });
 
         onCapture();
